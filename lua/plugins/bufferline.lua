@@ -1,12 +1,21 @@
 return {
-	{
-		'romgrk/barbar.nvim',
-		dependencies = {
-			'lewis6991/gitsigns.nvim',
-			'nvim-tree/nvim-web-devicons',
-		},
-		init         = function() vim.g.barbar_auto_setup = false end,
-		opts         = {},
-		version      = '^1.0.0',
-	},
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup({
+                options = {
+                    diagnostics = 'nvim_lsp',
+                    offsets = {
+                        filetype = 'NvimTree',
+                        text = 'File Explorer',
+                        text_align = 'center',
+                        separator = true,
+                    },
+                    separator_style = 'padded_slant',
+                }
+            })
+        end,
+    }
 }
