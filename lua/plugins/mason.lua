@@ -8,7 +8,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "eslint", "lua_ls", "tsserver" },
+                ensure_installed = { "eslint", "lua_ls", "ts_ls" },
                 opts = { inlay_hints = { enabled = true } }
             })
         end,
