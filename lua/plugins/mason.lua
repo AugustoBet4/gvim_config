@@ -49,6 +49,10 @@ return {
             lspconfig.volar.setup({
                 filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
                 init_options = {
+                    typescript = {
+                        tsdk =
+                        '/Users/augustolopez/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
+                    },
                     vue = {
                         hybridMode = false,
                     },
