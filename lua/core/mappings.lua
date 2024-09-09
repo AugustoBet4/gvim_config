@@ -24,4 +24,16 @@ vim.keymap.set('i', '<S-Left>', '<ESC>vh')
 vim.keymap.set('v', '<S-Left>', 'h')
 vim.keymap.set('n', '<S-Left>', 'vh')
 
+--  Commenting (Requires Plugin)
+vim.keymap.set('n', '<C-/>', '<CMD>lua require("Comment.api").toggle.linewise.current()<CR>', {})
+vim.keymap.set('x', '<C-/>',
+    '<ESC><CMD>lua require("Comment.api").locked("toggle.linewise")(vim.fn.visualmode())<CR>', {})
+
+
+--  Non Vim Keymapings
+vim.keymap.set("n", "<C-s>", ":w <CR>", { silent = true }) --  Vainilla Save
+vim.keymap.set("i", "<C-s>", "<ESC> :w <CR> i", {})        -- Save (Insert Mode)
+vim.keymap.set('n', '<C-q>', ':bd <CR>', {})               --Quit
+
+
 vim.keymap.set('n', '<leader>a', 'ggVG', { desc = "Select the whole file" })
