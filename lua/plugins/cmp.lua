@@ -3,8 +3,6 @@ local check_backspace = function()
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
---require("luasnip.loaders.from_vscode").lazy_load()
-
 return {
     {
         "hrsh7th/nvim-cmp",
@@ -42,7 +40,7 @@ return {
             cmp.setup {
                 snippet = {
                     expand = function(args)
-                        luasnip.lsp_expand(args)
+                        luasnip.lsp_expand(args.body)
                     end,
                 },
                 mapping = {
