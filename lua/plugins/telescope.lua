@@ -10,7 +10,8 @@ local telescope_config = function()
             },
             file_ignore_patterns = {
                 "node_modules",
-                "vendor"
+                "vendor",
+                ".git"
             },
         },
         extensions = {
