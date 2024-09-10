@@ -151,11 +151,27 @@ return {
         "stevearc/conform.nvim",
         config = function()
             require("conform").setup({
+                formatters_by_ft = {
+                    vue = { "prettier", "prettierd", stop_after_first = true },
+                    php = { "php-cs-fixer" },
+                },
                 format_on_save = {
                     -- These options will be passed to conform.format()
-                    timeout_ms = 500,
+                    timeout_ms = 1000,
                     lsp_fallback = true,
                 },
+                notify_on_error = true,
+                formatters = {
+                    ["php-cs-fixer"] = {
+                        command = "php-cs-fixer",
+                        args = {
+                            "fix",
+                            "--rules=@PSR2",
+                            "$FILENAME",
+                        },
+                        stdin = false,
+                    },
+                }
             })
         end,
     },
