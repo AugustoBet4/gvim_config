@@ -35,5 +35,5 @@ vim.keymap.set("n", "<C-s>", ":w <CR>", { silent = true }) --  Vainilla Save
 vim.keymap.set("i", "<C-s>", "<ESC> :w <CR> i", {})        -- Save (Insert Mode)
 vim.keymap.set('n', '<C-q>', ':bd <CR>', {})               --Quit
 
-
-vim.keymap.set('n', '<leader>a', 'ggVG', { desc = "Select the whole file" })
+-- Select all in buffer
+vim.keymap.set('n', '<C-a>', 'ggVG', { desc = "Select the whole file" })
